@@ -1,7 +1,10 @@
-//Abstract imports
+// Abstract imports
 @import "abstract/variables";
 @import "abstract/mixins";
 
-//Base imports
+// Base imports
 @import "base/reset";
 @import "base/typography";
+
+// Components
+@import "components/app-container";
