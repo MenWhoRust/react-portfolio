@@ -6,7 +6,7 @@ import MainMenu from "./components/main-menu";
 
 function App() {
   return (
-    <div className="app-container">
+    <div className="app-container theme-dark">
      <MainMenu/>
     </div>
   );

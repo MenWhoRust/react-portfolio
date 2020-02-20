@@ -1,0 +1,31 @@
+.theme-dark{
+  &.app-container{
+    background-color: $gruvbox-dark-bg;
+  }
+  &.revolver{
+    &__words{
+      color: $gruvbox-dark-fg0;
+      &--highlight{
+        border-color: $gruvbox-dark-red-dark;
+      }
+    }
+    &__phrase{
+      color: $gruvbox-dark-red-light;
+
+    }
+  }
+
+
+  &.image-pin__container{
+    border-color: $gruvbox-dark-blue-light;
+  }
+
+  &.nav-button{
+    &__container{
+      background-color: $gruvbox-dark-aqua-dark;
+    }
+    &__text{
+      color: $gruvbox-dark-fg0;
+    }
+  }
+}

@@ -2,22 +2,20 @@
   &__container{
     display: flex;
     flex-direction: row;
-    margin: 2rem 0 0 2rem;
+    margin: 2rem 0 2rem 0;
   }
   &__words {
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway;
     font-size: 2rem;
     padding: 2px;
     &--highlight {
-
-      border-bottom: 1px solid $gruvbox-dark-red-dark;
+      border-bottom: 1px solid;
       min-width: 10rem;
 
     }
   }
   &__phrase{
 
-    color: $gruvbox-dark-red-light;
     &--enter{
       animation: slideInDown 1.5s forwards;
 

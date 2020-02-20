@@ -17,11 +17,8 @@
 
     &__container {
         border-radius: 50%;
-        border: 2px solid $gruvbox-dark-blue-light;
+        border: 2px solid;
         overflow: hidden;
-
-
-
     }
     &__content {
         width: 100%;

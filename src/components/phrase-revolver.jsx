@@ -11,7 +11,7 @@ class PhraseRevolver extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {currentIndex: 0, phraseAnimClass: "revolver__phrase revolver__phrase--enter"}
+        this.state = {currentIndex: 0, phraseAnimClass: "revolver__phrase--enter"}
         this.phrases = [
             'coding',
             'learning',
@@ -31,14 +31,14 @@ class PhraseRevolver extends React.Component {
 
             setTimeout(() =>{
                 this.setState({
-                    phraseAnimClass: "revolver__phrase revolver__phrase--leave"
+                    phraseAnimClass: "revolver__phrase--leave"
                 })
             }, this.baseTimeout + this.timeModifier);
             clearTimeout()
             this.isFirstLoad = false;
         }
         return (
-            <div className={this.state.phraseAnimClass}>{text}</div>
+            <div className={`revolver__phrase theme-dark ${this.state.phraseAnimClass}`}>{text}</div>
         )
     }
 
@@ -54,14 +54,14 @@ class PhraseRevolver extends React.Component {
         setInterval(()=> {
             setTimeout(() =>{
                 this.setState({
-                    phraseAnimClass: "revolver__phrase revolver__phrase--leave"
+                    phraseAnimClass: "revolver__phrase--leave"
                 })
             }, this.baseTimeout + this.timeModifier);
 
             clearTimeout();
 
             this.setState({
-                phraseAnimClass: "revolver__phrase revolver__phrase--enter"
+                phraseAnimClass: "revolver__phrase--enter"
             })
 
             this.increaseIndex()
@@ -73,10 +73,10 @@ class PhraseRevolver extends React.Component {
 
     render() {
         return (
-            <div className="revolver__container">
-                <div className="revolver__words">I love</div>
-                <div className="revolver__words revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
-                <div className="revolver__words">!</div>
+            <div className="revolver__container theme-dark">
+                <div className="revolver__words theme-dark">I love</div>
+                <div className="revolver__words theme-dark revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
+                <div className="revolver__words theme-dark">!</div>
             </div>
         )
     }
