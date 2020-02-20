@@ -1,27 +1,30 @@
-.image {
-    &-content {
-        width: 100%;
-        height: 100%;
+.image-pin {
+    &--small {
+        width: 10rem;
+        height: 10rem;
     }
 
-    &-pin {
+    &--medium {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &--large {
+        width: 25rem;
+        height: 25rem;
+    }
+
+
+    &__container {
         border-radius: 50%;
         border: 2px solid $gruvbox-dark-blue-light;
         overflow: hidden;
 
-        &--small {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
 
-        &--medium {
-            width: 5rem;
-            height: 5rem;
-        }
 
-        &--large {
-            width: 25rem;
-            height: 25rem;
-        }
+    }
+    &__content {
+        width: 100%;
+        height: 100%;
     }
 }

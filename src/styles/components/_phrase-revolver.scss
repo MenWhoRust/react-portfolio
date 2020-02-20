@@ -1,0 +1,60 @@
+.revolver{
+  &__container{
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 0 0 2rem;
+  }
+  &__words {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    padding: 2px;
+    &--highlight {
+
+      border-bottom: 1px solid $gruvbox-dark-red-dark;
+      min-width: 10rem;
+
+    }
+  }
+  &__phrase{
+
+    color: $gruvbox-dark-red-light;
+    &--enter{
+      animation: slideInDown 1.5s forwards;
+
+    }
+    &--leave{
+      animation: slideOutDown 1.5s forwards;
+    }
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideOutDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+}
+

@@ -6,8 +6,8 @@ function ImagePin(props) {
     let alt = props.alt;
     //TODO: Add image element
     return(
-        <div className="image-pin image-pin--large">
-            <img className="image-content" alt={alt} src={imgUrl}/>
+        <div className="image-pin__container image-pin--large">
+            <img className="image-pin__content" alt={alt} src={imgUrl}/>
         </div>
     )
 
