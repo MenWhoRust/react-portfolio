@@ -1,6 +1,7 @@
 import React from "react";
 
 
+const phrasesReg = /(\$phrases)+/gi;
 class PhraseRevolver extends React.Component {
     phrases;
     segmentArr;
@@ -13,7 +14,7 @@ class PhraseRevolver extends React.Component {
         super(props);
 
         this.state = {currentIndex: 0, phraseAnimClass: "revolver__phrase--enter"};
-        this.segmentArr = props.text.split(/(\$phrases)+/g);
+        this.segmentArr = props.text.split(phrasesReg);
         this.phrases = props.phrases;
     }
 
@@ -66,7 +67,7 @@ class PhraseRevolver extends React.Component {
 
     getRevolverContent() {
         return this.segmentArr.map(s => {
-            if (!(/(\$phrases)/g).test(s)) {
+            if (!(phrasesReg).test(s)) {
                 return <div className="revolver__words theme-dark">{s}</div>;
             }
             return (
