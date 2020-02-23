@@ -25,16 +25,16 @@ class PhraseRevolver extends React.Component {
     componentDidMount() {
     }
 
-    getPhrase(text){
-        if(this.isFirstLoad){
-            this.startInterval()
+    getPhrase(text) {
+        if (this.isFirstLoad) {
+            this.startInterval();
 
-            setTimeout(() =>{
+            setTimeout(() => {
                 this.setState({
                     phraseAnimClass: "revolver__phrase--leave"
                 })
             }, this.baseTimeout + this.timeModifier);
-            clearTimeout()
+            clearTimeout();
             this.isFirstLoad = false;
         }
         return (
@@ -43,16 +43,16 @@ class PhraseRevolver extends React.Component {
     }
 
 
-    increaseIndex(){
+    increaseIndex() {
         let index = (this.state.currentIndex + 1) % this.phrases.length;
         this.setState({
             currentIndex: index
         });
     }
 
-    startInterval(){
-        setInterval(()=> {
-            setTimeout(() =>{
+    startInterval() {
+        setInterval(() => {
+            setTimeout(() => {
                 this.setState({
                     phraseAnimClass: "revolver__phrase--leave"
                 })
@@ -62,7 +62,7 @@ class PhraseRevolver extends React.Component {
 
             this.setState({
                 phraseAnimClass: "revolver__phrase--enter"
-            })
+            });
 
             this.increaseIndex()
 
@@ -70,12 +70,12 @@ class PhraseRevolver extends React.Component {
     }
 
 
-
     render() {
         return (
             <div className="revolver__container theme-dark">
                 <div className="revolver__words theme-dark">I love</div>
-                <div className="revolver__words theme-dark revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
+                <div
+                    className="revolver__words theme-dark revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
                 <div className="revolver__words theme-dark">!</div>
             </div>
         )
