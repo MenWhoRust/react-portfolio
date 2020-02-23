@@ -28,4 +28,20 @@
       color: $gruvbox-dark-fg0;
     }
   }
+
+  &.hero-modal{
+    &__container{
+      background: rgba($gruvbox-dark-bg0_s, 0.9);
+    }
+    &__content{
+      background: $gruvbox-dark-bg0_h;
+    }
+    &__close-button{
+      background: $gruvbox-dark-bg4;
+
+      & > svg{
+        color: $gruvbox-dark-fg0;
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 // Abstract imports
 @import "abstract/variables";
 @import "abstract/mixins";
+@import "abstract/animations";
 
 // Base imports
 @import "base/reset";
@@ -12,6 +13,8 @@
 @import "components/image-pin";
 @import "components/phrase-revolver";
 @import "components/nav-button";
+@import "components/hero-modal";
+
 
 //Themes
 @import "themes/gruvbox-dark";

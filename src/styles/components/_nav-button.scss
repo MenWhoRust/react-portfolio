@@ -23,16 +23,4 @@
     font-family: $monserrat;
   }
 }
-@keyframes pulse {
-  0% {
-    transform: scale(.9);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 50px rgba($gruvbox-dark-aqua-dark, 0);
-  }
-  100% {
-    transform: scale(.9);
-    box-shadow: 0 0 0 0 rgba($gruvbox-dark-aqua-dark, 0);
-  }
-}
+
