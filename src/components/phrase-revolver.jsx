@@ -3,6 +3,7 @@ import React from "react";
 
 class PhraseRevolver extends React.Component {
     phrases;
+    segmentArr;
     isFirstLoad = true;
     baseTimeout = 1500;
     baseInterval = 3000;
@@ -11,15 +12,9 @@ class PhraseRevolver extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {currentIndex: 0, phraseAnimClass: "revolver__phrase--enter"}
-        this.phrases = [
-            'coding',
-            'learning',
-            'designing',
-            'growing',
-            'thinking'
-
-        ]
+        this.state = {currentIndex: 0, phraseAnimClass: "revolver__phrase--enter"};
+        this.segmentArr = props.text.split(/(\$phrases)+/g);
+        this.phrases = props.phrases;
     }
 
     componentDidMount() {
@@ -69,14 +64,23 @@ class PhraseRevolver extends React.Component {
         }, this.baseInterval + this.timeModifier)
     }
 
+    getRevolverContent() {
+        return this.segmentArr.map(s => {
+            if (!(/(\$phrases)/g).test(s)) {
+                return <div className="revolver__words theme-dark">{s}</div>;
+            }
+            return (
+                <div
+                    className="revolver__words theme-dark revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
+            )
+        }).reduce((a, b) => [a, ' ', b]);
+    }
+
 
     render() {
         return (
             <div className="revolver__container theme-dark">
-                <div className="revolver__words theme-dark">I love</div>
-                <div
-                    className="revolver__words theme-dark revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
-                <div className="revolver__words theme-dark">!</div>
+                {this.getRevolverContent()}
             </div>
         )
     }
