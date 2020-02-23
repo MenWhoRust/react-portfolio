@@ -66,12 +66,12 @@ class PhraseRevolver extends React.Component {
     }
 
     getRevolverContent() {
-        return this.segmentArr.map(s => {
+        return this.segmentArr.map((s, i) => {
             if (!(phrasesReg).test(s)) {
-                return <div className="revolver__words theme-dark">{s}</div>;
+                return <div key={i} className="revolver__words theme-dark">{s}</div>;
             }
             return (
-                <div
+                <div key={i}
                     className="revolver__words theme-dark revolver__words--highlight">{this.getPhrase(this.phrases[this.state.currentIndex])}</div>
             )
         }).reduce((a, b) => [a, ' ', b]);
