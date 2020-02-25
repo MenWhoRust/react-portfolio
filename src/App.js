@@ -3,15 +3,16 @@ import "./styles/index.scss"
 import MainMenu from "./components/main-menu";
 import NavButton from "./components/nav-button";
 import HeroModal from "./components/hero-modal";
+import Summary from "./components/summary";
 
 class App extends Component {
 
-    navButtons = [
-        'Summary',
-        'Skills',
-        'Projects',
-        'Aspirations'
-    ];
+    modalMapping = {
+        Summary: Summary,
+        Skills: null,
+        Projects: null,
+        Aspirations: null
+    };
 
     constructor(props) {
         super(props);
@@ -26,10 +27,10 @@ class App extends Component {
     render() {
         return (
             <div className="app-container theme-dark">
-                <HeroModal isOpen={this.state.heroModalOpen} content={this.state.heroModalContent} closeOnClick={() => this.setState({heroModalOpen: false})}/>
+                <HeroModal isOpen={this.state.heroModalOpen} content={this.modalMapping[this.state.heroModalContent]} closeOnClick={() => this.setState({heroModalOpen: false})}/>
                 <MainMenu>
                     {
-                        this.navButtons.map((c, i) => <NavButton key={i} text={c} onClick={() => this.setState({
+                        Object.keys(this.modalMapping).map((c, i) => <NavButton key={i} text={c} onClick={() => this.setState({
                             heroModalOpen: true,
                             heroModalContent: c
                         })}/>)

@@ -6,6 +6,7 @@ const getCurrentModalClass = (element, isOpen) => {
     return `${element} ${isOpen ? `${element}--open` : `${element}--close`} theme-dark`;
 };
 
+
 const HeroModal = (props) => {
     return (
         <div className={getCurrentModalClass('hero-modal__container', props.isOpen)}>
