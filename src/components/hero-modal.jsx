@@ -14,6 +14,7 @@ const HeroModal = (props) => {
                 <FontAwesomeIcon icon={faTimes}/>
             </div>
             <div className={getCurrentModalClass('hero-modal__content', props.isOpen)}>
+                {props.content}
             </div>
         </div>
     )
