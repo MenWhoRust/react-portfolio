@@ -1,34 +1,40 @@
-.hero-modal{
-  &__container{
+.hero-modal {
+  &__container {
     position: fixed;
     z-index: 999;
     display: flex;
-    &--open{
-      width: 100vw;
-      height: 100vh;
+    width: 100vw;
+    height: 100vh;
+
+    &--open {
       animation: fadeIn $hero-modal-enter ease-in both;
     }
-    &--close{
-      width: 0;
-      height: 0;
+
+    &--close {
+      animation: fadeOut $hero-modal-exit ease-in both;
     }
   }
 
-  &__content{
+  &__content {
     margin: 5rem 10rem 5rem 10rem;
     flex-grow: 1;
     border-radius: 2rem;
     display: flex;
     justify-content: center;
     overflow: scroll;
-    &--open{
-      animation: zoomIn $hero-modal-enter  both ;
+
+    &--open {
+      animation: zoomIn $hero-modal-enter both;
       animation-delay: $hero-modal-enter;
+    }
+
+    &--close {
+      animation: zoomOut $hero-modal-exit both;
     }
 
   }
 
-  &__close-button{
+  &__close-button {
     position: fixed;
     right: 2rem;
     top: 2rem;
@@ -38,15 +44,27 @@
     opacity: 0;
     display: flex;
     padding: 5px;
-    &--open{
+
+    &--open {
       animation: fadeInUp $hero-modal-enter ease-in both;
       animation-delay: $hero-modal-enter;
-      & > svg{
+
+      & > svg {
         animation: rotateIn $hero-modal-enter ease-in both;
         animation-delay: $hero-modal-enter;
       }
     }
-    & > svg{
+
+    &--close {
+      animation: fadeOutDown $hero-modal-enter ease-in both;
+
+      & > svg {
+        animation: rotateOut $hero-modal-enter ease-in both;
+      }
+
+    }
+
+    & > svg {
       flex: 1;
       height: auto;
 
