@@ -8,7 +8,7 @@ import Summary from "./components/summary";
 class App extends Component {
 
     modalMapping = {
-        Summary: Summary(),
+        Summary: <Summary/>,
         Skills: null,
         Projects: null,
         Aspirations: null

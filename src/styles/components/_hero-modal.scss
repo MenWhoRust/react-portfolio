@@ -3,7 +3,6 @@
     position: fixed;
     z-index: 999;
     display: flex;
-    overflow: hidden;
     &--open{
       width: 100vw;
       height: 100vh;
@@ -19,6 +18,9 @@
     margin: 5rem 10rem 5rem 10rem;
     flex-grow: 1;
     border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
     &--open{
       animation: zoomIn $hero-modal-enter  both ;
       animation-delay: $hero-modal-enter;

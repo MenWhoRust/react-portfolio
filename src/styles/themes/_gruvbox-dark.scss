@@ -44,4 +44,17 @@
       }
     }
   }
+
+  &.summary{
+    &__container{
+      color: $gruvbox-dark-fg0;
+    }
+
+    &__content{
+      & h1 {
+        color: $gruvbox-dark-orange-light;
+      }
+
+    }
+  }
 }
