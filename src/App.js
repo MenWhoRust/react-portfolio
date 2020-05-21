@@ -27,13 +27,16 @@ class App extends Component {
     render() {
         return (
             <div className="app-container theme-dark">
-                <HeroModal isOpen={this.state.heroModalOpen} content={this.modalMapping[this.state.heroModalContent]} closeOnClick={() => this.setState({heroModalOpen: false})}/>
+                <HeroModal isOpen={this.state.heroModalOpen} content={this.modalMapping[this.state.heroModalContent]}
+                           closeOnClick={() => this.setState({heroModalOpen: false})}/>
                 <MainMenu>
                     {
-                        Object.keys(this.modalMapping).map((c, i) => <NavButton key={i} text={c} onClick={() => this.setState({
-                            heroModalOpen: true,
-                            heroModalContent: c
-                        })}/>)
+                        Object.keys(this.modalMapping)
+                            .map((c, i) => <NavButton key={i} text={c}
+                                                                                onClick={() => this.setState({
+                                                                                    heroModalOpen: true,
+                                                                                    heroModalContent: c
+                                                                                })}/>)
                     }
                 </MainMenu>
             </div>
