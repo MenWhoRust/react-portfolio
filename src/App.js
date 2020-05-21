@@ -8,7 +8,7 @@ import Summary from "./components/summary";
 class App extends Component {
 
     modalMapping = {
-        Summary: Summary(),
+        Summary: <Summary/>,
         Skills: null,
         Projects: null,
         Aspirations: null
@@ -18,25 +18,32 @@ class App extends Component {
         super(props);
 
         this.state = {
+            activateHero: false,
             heroModalOpen: false,
             heroModalContent: ''
         };
     }
 
+    destroyHero(){
+        this.setState({heroModalOpen: false})
+
+        setTimeout(() => this.setState({activateHero: false}), 1000)
+    }
+
+
+
 
     render() {
         return (
             <div className="app-container theme-dark">
-                <HeroModal isOpen={this.state.heroModalOpen} content={this.modalMapping[this.state.heroModalContent]}
-                           closeOnClick={() => this.setState({heroModalOpen: false})}/>
+                {this.state.activateHero ? <HeroModal isOpen={this.state.heroModalOpen} content={this.modalMapping[this.state.heroModalContent]} closeOnClick={() => this.destroyHero()}/> : ""}
                 <MainMenu>
                     {
-                        Object.keys(this.modalMapping)
-                            .map((c, i) => <NavButton key={i} text={c}
-                                                                                onClick={() => this.setState({
-                                                                                    heroModalOpen: true,
-                                                                                    heroModalContent: c
-                                                                                })}/>)
+                        Object.keys(this.modalMapping).map((c, i) => <NavButton key={i} text={c} onClick={() => this.setState({
+                            activateHero:true,
+                            heroModalOpen: true,
+                            heroModalContent: c
+                        })}/>)
                     }
                 </MainMenu>
             </div>
