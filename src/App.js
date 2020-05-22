@@ -29,33 +29,39 @@ class App extends Component {
     setTimeout(() => this.setState({ activateHero: false }), 1000);
   }
 
+  mapNavButtons() {
+    return Object.keys(this.modalMapping).map((c, i) => (
+      <NavButton
+        key={i}
+        text={c}
+        onClick={() =>
+          this.setState({
+            activateHero: true,
+            heroModalOpen: true,
+            heroModalContent: c,
+          })
+        }
+      />
+    ));
+  }
+
+  handleActivateHero(activateHero) {
+    if (activateHero) {
+      return (
+        <HeroModal
+          isOpen={this.state.heroModalOpen}
+          content={this.modalMapping[this.state.heroModalContent]}
+          closeOnClick={() => this.destroyHero()}
+        />
+      );
+    } else return "";
+  }
+
   render() {
     return (
       <div className='app-container theme-dark'>
-        {this.state.activateHero ? (
-          <HeroModal
-            isOpen={this.state.heroModalOpen}
-            content={this.modalMapping[this.state.heroModalContent]}
-            closeOnClick={() => this.destroyHero()}
-          />
-        ) : (
-          ""
-        )}
-        <MainMenu>
-          {Object.keys(this.modalMapping).map((c, i) => (
-            <NavButton
-              key={i}
-              text={c}
-              onClick={() =>
-                this.setState({
-                  activateHero: true,
-                  heroModalOpen: true,
-                  heroModalContent: c,
-                })
-              }
-            />
-          ))}
-        </MainMenu>
+        {this.activateHero(this.state.activateHero)}
+        <MainMenu>{this.mapNavButtons}</MainMenu>
       </div>
     );
   }
