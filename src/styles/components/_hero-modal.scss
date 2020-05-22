@@ -31,7 +31,6 @@
     &--close {
       animation: zoomOut $hero-modal-exit both;
     }
-
   }
 
   &__close-button {
@@ -62,16 +61,11 @@
       & > svg {
         animation: rotateOut $hero-modal-enter ease-in both;
       }
-
     }
 
     & > svg {
       flex: 1;
       height: auto;
-
     }
   }
 }
-
-
-
