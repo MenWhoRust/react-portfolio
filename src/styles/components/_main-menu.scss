@@ -8,10 +8,11 @@
     justify-content: center;
     flex-direction: column;
   }
-  &__button-box {
+  &__button-box{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
   }
 }

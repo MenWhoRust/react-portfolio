@@ -7,7 +7,7 @@
 
 @mixin clearfix {
   &::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -17,11 +17,12 @@
   color: $color;
   background-image: linear-gradient(to right, transparent 0%, transparent 50%, $color 50%);
   background-size: 200%;
-  transition: all 0.5s;
+  transition: all .5s;
 
   &:hover {
     color: $color-white;
     background-position: -100%;
+
   }
 
   &--active {

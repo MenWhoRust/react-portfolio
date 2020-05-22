@@ -1,5 +1,5 @@
-.nav-button {
-  &__container {
+.nav-button{
+  &__container{
     border-radius: 50%;
     width: 12rem;
     height: 12rem;
@@ -9,13 +9,13 @@
     justify-content: center;
     cursor: pointer;
 
-    &:hover {
-      box-shadow: 0 0 0 0 rgba($gruvbox-dark-aqua-dark, 0.5);
+    &:hover{
+      box-shadow: 0 0 0 0 rgba($gruvbox-dark-aqua-dark, .5);
       -webkit-animation: pulse 1.5s infinite;
     }
   }
 
-  &__text {
+  &__text{
     display: inline-flex;
     align-items: center;
     padding: 1rem;
@@ -23,3 +23,4 @@
     font-family: $monserrat;
   }
 }
+

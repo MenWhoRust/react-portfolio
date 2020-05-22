@@ -1,5 +1,5 @@
 // COLORS
-$color-white: #ffffff;
+$color-white: #FFFFFF;
 $color-black: #000000;
 
 //Gruvbox Dark Colours
@@ -40,6 +40,7 @@ $gruvbox-dark-aqua-light: #8ec07c;
 
 $gruvbox-dark-orange-dark: #d65d0e;
 $gruvbox-dark-orange-light: #fe8019;
+
 
 $gruvbox-dark-gray-dark: #928374;
 $gruvbox-dark-gray-light: #a89984;
@@ -83,19 +84,23 @@ $gruvbox-light-aqua-light: #689d6a;
 $gruvbox-light-orange-dark: #af3a03;
 $gruvbox-light-orange-light: #d65d0e;
 
+
 $gruvbox-light-gray-dark: #7c6f64;
 $gruvbox-light-gray-light: #928374;
 
 //FONT FAMILIES
-$raleway: "Raleway", sans-serif;
-$monserrat: "Montserrat", sans-serif;
+$raleway: 'Raleway', sans-serif;
+$monserrat: 'Montserrat', sans-serif;
+
 
 //SIZES
 //  FONT
-$nav-button-text: 1.6rem;
+$nav-button-text:  1.6rem;
+
 
 //Animations
 //  Timings
 
 $hero-modal-enter: 600ms;
 $hero-modal-exit: 1s;
+

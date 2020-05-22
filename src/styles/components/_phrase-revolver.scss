@@ -1,5 +1,5 @@
-.revolver {
-  &__container {
+.revolver{
+  &__container{
     display: flex;
     flex-direction: row;
     margin: 2rem 0 2rem 0;
@@ -11,14 +11,18 @@
     &--highlight {
       border-bottom: 1px solid;
       min-width: 10rem;
+
     }
   }
-  &__phrase {
-    &--enter {
+  &__phrase{
+
+    &--enter{
       animation: slideInDown 1.5s forwards;
+
     }
-    &--leave {
+    &--leave{
       animation: slideOutDown 1.5s forwards;
     }
   }
 }
+
