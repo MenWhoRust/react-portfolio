@@ -5,6 +5,7 @@ import PhraseRevolver from './phrase-revolver';
 import phrasesJson from '../resources/json/phrases';
 
 const MainMenu = props => {
+  console.log(props);
   return (
     <div className='main-menu__container theme-dark'>
       <ImagePin src={pic} alt='Me!' />

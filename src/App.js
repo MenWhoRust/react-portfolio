@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "./styles/index.scss";
-import MainMenu from "./components/main-menu";
-import NavButton from "./components/nav-button";
-import HeroModal from "./components/hero-modal";
-import Summary from "./components/summary";
+import React, { Component } from 'react';
+import './styles/index.scss';
+import MainMenu from './components/main-menu';
+import NavButton from './components/nav-button';
+import HeroModal from './components/hero-modal';
+import Summary from './components/summary';
 
 class App extends Component {
   modalMapping = {
@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       activateHero: false,
       heroModalOpen: false,
-      heroModalContent: "",
+      heroModalContent: '',
     };
   }
 
@@ -54,14 +54,14 @@ class App extends Component {
           closeOnClick={() => this.destroyHero()}
         />
       );
-    } else return "";
+    } else return '';
   }
 
   render() {
     return (
       <div className='app-container theme-dark'>
-        {this.activateHero(this.state.activateHero)}
-        <MainMenu>{this.mapNavButtons}</MainMenu>
+        {this.handleActivateHero(this.state.activateHero)}
+        <MainMenu>{this.mapNavButtons()}</MainMenu>
       </div>
     );
   }
