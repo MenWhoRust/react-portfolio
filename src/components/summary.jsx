@@ -7,13 +7,18 @@ class Summary extends React.Component {
     this.state = { markdown: '' };
   }
 
-  parseContentJson(content) {
-    if (content === undefined || content === null || content.length <= 0) return;
+  parseContentJson(elements) {
+    if (elements === undefined || elements === null || elements.length <= 0) return;
 
-    return content.map(o => {
-      if (o.tag === undefined || o.tag === '') return o.content;
+    return elements.map(elem => {
+      if (elem.tag === undefined || elem.tag === '') return elem.content;
 
-      return React.createElement(o.tag, { className: o.class }, o.content, this.parseContentJson(o.children));
+      return React.createElement(
+        elem.tag,
+        { className: elem.class },
+        elem.content,
+        this.parseContentJson(elem.children)
+      );
     });
   }
 
